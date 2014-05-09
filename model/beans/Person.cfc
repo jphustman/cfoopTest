@@ -1,27 +1,37 @@
 component
-    displayname="Person"
-    hint="I am the Person Class."
-    accessors="true"
+    displayname = "Person"
+    output = "false"
+    hint = "I am the Person Class."
+    accessors = "true"
 {
     property name="firstName" type="string" default="";
     property name="lastName" type="string" default="";
     property name="gender" type="string" default="";
+    property name="dateOfBirth" type="date" default="0";
+    property name="hairColor" type="string" default="";
 
     variables.instance = {
         firstName = "",
         lastName = "",
-        gender = ""
+        gender = "",
+        dateOfBirth = "0",
+        hairColor = ""
     };
+
 
     public any function init(required string firstName = "",
                              required string lastName = "",
-                             required string gender = "")
+                             required string gender = "",
+                             required date dateOfBirth = "0",
+                             required string hairColor = "")
                     output="false"
                     hint="I am the constructor method for the Person Class."
     {
-        variables.firstName = arguments.firstName;
-        variables.lastName  = arguments.lastName;
-        variables.gender    = arguments.gender;
+        variables.firstName   = arguments.firstName;
+        variables.lastName    = arguments.lastName;
+        variables.gender      = arguments.gender;
+        variables.dateOfBirth = arguments.dateOfBirth;
+        variables.hairColor   = arguments.hairColor;
 
         return (this);
     }
